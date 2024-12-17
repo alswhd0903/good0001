@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        이상형 월드컵 메인
+    </title>
+    <style>
+        div1{
+            margin : 10px;
+            position : absolute;
+        }
+        input{
+            width : 180px;
+        }
+</style>
+
+</head>
+<body style="background-image: url('배경화면0001.jpg');">
+
+    <div1 style="right: 0px;">
+        <input type="submit" value="뒤로 가기" style="font-size: 35px; background-color: rgb(39, 175, 68);">
+    </div1>
+    <div1 style="left: 29%; top: 20%;">
+        <span style="font-size: 60px; color: rgb(21, 75, 48)">지브리 캐릭터 이상형 월드컵</span>
+    </div1>
+    <div1 style="left: 40%; top: 66%;">
+        <input type="submit" value="게임 방법" style="font-size: 35px; background-color: rgb(39, 175, 68);"
+        onmouseover="this.style='font-size: 35px; background-color: red;'"
+        onmouseout="this.style='font-size: 35px; background-color: rgb(39, 175, 68);'"
+        onclick="CASE1(this)" id="win1">
+
+        <input type="submit" value="게임 시작" style="font-size: 35px; background-color: rgb(39, 175, 68);"
+        onmouseover="this.style='font-size: 35px; background-color: red;'"
+        onmouseout="this.style='font-size: 35px; background-color: rgb(39, 175, 68);'"
+        onclick="CASE0(this)" id="win0">
+    </div1>
+
+    <script>//뒤로 가기 버튼은 본래 소개 페이지 메인 화면으로 넘어가는 구조였으나, 지금은 없기 때문에 비활성화 처리하였다.
+        var scoreset = document.getElementById("win0");//게임 시작과 관련된 이벤트.
+        var help = document.getElementById("win1");//게임 방법과 관련된 이벤트.
+        scoreset.addEventListener("click", CASE0);
+
+        function CASE0(obj){//게임 시작 버튼에 해당하는 이벤트.
+            localStorage.clear();//시작 전 데이터 초기화(오류 방지)
+            location.href = "WebGame001Start2.html";//<a href>와 같다. 다음 페이지로 이동한다. 1번 선택지 화면으로 넘어간다.
+        }
+
+        function CASE1(obj){//설명문에 해당하는 이벤트.
+            alert('이것은 자신이 원하는 것을 고르는 게임입니다.\n32개의 캐릭터가 나오고 총 31번의 결정을 하게 됩니다.\n이미지 아래 선택 버튼을 누르면 다음 페이지로 이동합니다.\n깃허브 호스팅의 경우 사진 출력이 느리니 주의하시기 바랍니다.');
+        }
+    </script>
+</body>
+</html>
